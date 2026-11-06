@@ -1,0 +1,10 @@
+# Kafka client and Confluent Schema Registry Avro serialization.
+confluent-kafka==2.3.0
+fastavro==1.9.4
+
+# Async WebSocket client shared by Binance, Coinbase, OKX and Bitget.
+websockets==12.0
+
+# Environment configuration and Schema Registry HTTP client.
+python-dotenv==1.0.0
+requests==2.31.0

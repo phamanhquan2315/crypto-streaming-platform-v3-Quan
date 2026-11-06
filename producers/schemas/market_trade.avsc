@@ -1,0 +1,16 @@
+{
+  "namespace": "com.crypto.streaming.market",
+  "type": "record",
+  "name": "MarketTrade",
+  "doc": "Normalized public spot trade event for OKX and Bitget.",
+  "fields": [
+    {"name": "exchange", "type": "string", "doc": "Exchange identifier: okx or bitget."},
+    {"name": "symbol", "type": "string", "doc": "Canonical symbol, e.g. BTCUSDT."},
+    {"name": "trade_id", "type": "string", "doc": "Exchange trade ID stored as string."},
+    {"name": "price", "type": {"type": "bytes", "logicalType": "decimal", "precision": 18, "scale": 8}},
+    {"name": "quantity", "type": {"type": "bytes", "logicalType": "decimal", "precision": 18, "scale": 8}},
+    {"name": "side", "type": "string", "doc": "Aggressor side: BUY or SELL."},
+    {"name": "trade_time", "type": {"type": "long", "logicalType": "timestamp-millis"}},
+    {"name": "ingestion_time", "type": {"type": "long", "logicalType": "timestamp-millis"}}
+  ]
+}

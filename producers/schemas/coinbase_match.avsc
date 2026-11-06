@@ -1,0 +1,55 @@
+{
+  "namespace": "com.crypto.streaming.coinbase",
+  "type": "record",
+  "name": "CoinbaseTrade",
+  "doc": "Raw trade event from Coinbase Advanced Trade WebSocket",
+  "fields": [
+    {
+      "name": "trade_id",
+      "type": "string",
+      "doc": "Unique trade ID from Coinbase"
+    },
+    {
+      "name": "product_id",
+      "type": "string",
+      "doc": "Trading pair e.g. BTC-USD, ETH-USD, SOL-USD"
+    },
+    {
+      "name": "price",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 18,
+        "scale": 8
+      },
+      "doc": "Trade execution price in USD"
+    },
+    {
+      "name": "size",
+      "type": {
+        "type": "bytes",
+        "logicalType": "decimal",
+        "precision": 18,
+        "scale": 8
+      },
+      "doc": "Trade quantity in base asset (BTC, ETH, SOL)"
+    },
+    {
+      "name": "side",
+      "type": "string",
+      "doc": "Trade direction: BUY or SELL"
+    },
+    {
+      "name": "event_time",
+      "type": "long",
+      "logicalType": "timestamp-millis",
+      "doc": "Trade execution time in milliseconds (converted from ISO string)"
+    },
+    {
+      "name": "ingestion_time",
+      "type": "long",
+      "logicalType": "timestamp-millis",
+      "doc": "Timestamp when Producer received the event"
+    }
+  ]
+}
