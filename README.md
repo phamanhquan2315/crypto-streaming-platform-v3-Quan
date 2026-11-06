@@ -62,6 +62,7 @@ message formats and do not yet implement full schemaevolution handling.
 
 ```
 Binance / Coinbase  ──>  Python Producers  ──>  Kafka  ──>  Flink (5 jobs)
+  / OKX / BITGET                                                  |                            
    (WebSocket)            (host, Avro)         (3 brokers)        │
                                                                   ├──> ClickHouse ──> Grafana
                                                                   └──> MinIO + Iceberg (Nessie catalog)
